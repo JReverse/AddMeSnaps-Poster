@@ -1,2 +1,4 @@
-# AddMeSnaps-Poster
-Flood females with horny males
+# Flood females with horny males
+
+- Inbuilt Rotating Proxy
+- Delays
