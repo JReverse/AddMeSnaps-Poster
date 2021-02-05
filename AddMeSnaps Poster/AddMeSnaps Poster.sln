@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddMeSnaps Poster", "AddMeSnaps Poster\AddMeSnaps Poster.csproj", "{87C7874E-7C15-4614-BAB0-E0B8B19EE15D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87C7874E-7C15-4614-BAB0-E0B8B19EE15D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C7874E-7C15-4614-BAB0-E0B8B19EE15D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C7874E-7C15-4614-BAB0-E0B8B19EE15D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C7874E-7C15-4614-BAB0-E0B8B19EE15D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B99966B9-E94F-417E-8A6B-12C64AD82A38}
+	EndGlobalSection
+EndGlobal
