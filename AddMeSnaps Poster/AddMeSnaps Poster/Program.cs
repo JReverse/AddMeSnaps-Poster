@@ -22,11 +22,18 @@ namespace AddMeSnaps_Poster
             var Delay = Console.ReadLine();
             while (true)
             {
-                HttpClient proxyclient = new HttpClient();
-                var response = await proxyclient.GetAsync("https://gimmeproxy.com/api/getProxy?ipPort=true&get=true&supportsHttps=true&maxCheckPeriod=60");
-                HttpClient client = new HttpClient(new HttpClientHandler { Proxy = new WebProxy(await response.Content.ReadAsStringAsync()), UseProxy = true });
-                await client.GetAsync("https://www.addmesnaps.com/index.php?snapname=" + victim + "$user&age=1&gender=female");
-                await Task.Delay(TimeSpan.FromMinutes(Convert.ToDouble(Delay)));
+                retry:
+                try
+                {
+                    HttpClient proxyclient = new HttpClient();
+                    var response = await proxyclient.GetAsync("https://gimmeproxy.com/api/getProxy?ipPort=true&get=true&supportsHttps=true&maxCheckPeriod=60");
+                    HttpClient client = new HttpClient(new HttpClientHandler { Proxy = new WebProxy(await response.Content.ReadAsStringAsync()), UseProxy = true });
+                    await client.GetAsync("https://www.addmesnaps.com/index.php?snapname=" + victim + "$user&age=1&gender=female");
+                    await Task.Delay(TimeSpan.FromMinutes(Convert.ToDouble(Delay)));
+                }
+                catch (Exception) {
+                    goto retry;
+                }
             }
         }
     }
