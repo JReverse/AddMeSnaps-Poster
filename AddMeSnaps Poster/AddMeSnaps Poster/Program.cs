@@ -25,10 +25,14 @@ namespace AddMeSnaps_Poster
                 retry:
                 try
                 {
+                    var PostParams = new Dictionary<string, string>();
+                    PostParams.Add("snapname", victim);
+                    PostParams.Add("age", "1");
+                    PostParams.Add("gender", "female");
                     HttpClient proxyclient = new HttpClient();
                     var response = await proxyclient.GetAsync("https://gimmeproxy.com/api/getProxy?ipPort=true&get=true&supportsHttps=true&maxCheckPeriod=60");
                     HttpClient client = new HttpClient(new HttpClientHandler { Proxy = new WebProxy(await response.Content.ReadAsStringAsync()), UseProxy = true });
-                    await client.GetAsync("https://www.addmesnaps.com/index.php?snapname=" + victim + "$user&age=1&gender=female");
+                    await client.PostAsync("https://www.addmesnaps.com/index.php", new FormUrlEncodedContent(PostParams));
                     await Task.Delay(TimeSpan.FromMinutes(Convert.ToDouble(Delay)));
                 }
                 catch (Exception) {
